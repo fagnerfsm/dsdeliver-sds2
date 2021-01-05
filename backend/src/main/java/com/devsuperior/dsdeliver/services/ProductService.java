@@ -18,7 +18,7 @@ public class ProductService {
 	private ProductRepository repository;
 	
 	@Transactional(readOnly = true)
-	public List<ProductDTO> findALL(){
+	public List<ProductDTO> findAll(){
 		List<Product> list = repository.findALLByOrderByNameAsc();
 		return list.stream().map(x -> new ProductDTO(x)).collect(Collectors.toList());
 	}
